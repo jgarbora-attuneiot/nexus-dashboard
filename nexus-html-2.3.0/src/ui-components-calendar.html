@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en" class="group/html">
+    <head>
+        <title>Nexus (HTML - DaisyUI)</title>
+
+        <load src="partials/head.html" />
+    </head>
+
+    <body>
+        <!--  Start: Layout - Main -->
+
+        <div class="size-full">
+            <div class="flex">
+                <load src="partials/sidebar.html" />
+
+                <div class="flex h-screen min-w-0 grow flex-col overflow-auto">
+                    <load src="partials/topbar.html" />
+
+                    <!--  Start: Layout - Content -->
+
+                    <div id="layout-content">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium">Calendar</h3>
+                            <div class="breadcrumbs hidden p-0 text-sm sm:inline">
+                                <ul>
+                                    <li><a href="./dashboards-ecommerce.html">Nexus</a></li>
+                                    <li class="">Components</li>
+                                    <li class="opacity-80">Calendar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <div>
+                                <div class="grid grid-cols-1 gap-6 md:grid-cols-2 2xl:grid-cols-4">
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Date Picker</div>
+                                            <div class="mt-3">
+                                                <p class="label text-sm">Input Field</p>
+                                                <div class="dropdown dropdown-start mt-1 w-full">
+                                                    <div
+                                                        role="button"
+                                                        class="input flex w-full items-center gap-2"
+                                                        tabindex="0">
+                                                        <input
+                                                            class="grow [appearance:none] [&::-webkit-calendar-picker-indicator]:hidden"
+                                                            placeholder="Pick a day"
+                                                            id="input-cally-target"
+                                                            type="date" />
+                                                        <div
+                                                            class="btn btn-xs btn-circle btn-ghost">
+                                                            <span
+                                                                class="iconify lucide--calendar text-base-content/70 size-4.5"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="dropdown-content mt-2" tabindex="0">
+                                                        <calendar-date
+                                                            class="cally bg-base-100 rounded-box shadow-md transition-all hover:shadow-lg"
+                                                            id="input-cally-element"
+                                                            value="-">
+                                                            <span
+                                                                class="iconify lucide--chevron-left"
+                                                                slot="previous"></span>
+                                                            <span
+                                                                class="iconify lucide--chevron-right"
+                                                                slot="next"></span>
+                                                            <calendar-month></calendar-month>
+                                                        </calendar-date>
+                                                    </div>
+                                                </div>
+                                                <p class="label mt-3 text-sm">
+                                                    Your birthdate (Single)
+                                                </p>
+                                                <div class="dropdown mt-1 w-full">
+                                                    <div
+                                                        role="button"
+                                                        class="btn btn-outline border-base-300 flex items-center gap-2"
+                                                        tabindex="0">
+                                                        <span
+                                                            class="iconify lucide--cake text-base-content/80 size-4.5"></span>
+                                                        <p
+                                                            class="text-start"
+                                                            id="button-cally-target">
+                                                            -
+                                                        </p>
+                                                        <span
+                                                            class="iconify lucide--chevron-down text-base-content/70 size-4"></span>
+                                                    </div>
+                                                    <div class="dropdown-content mt-2" tabindex="0">
+                                                        <calendar-date
+                                                            class="cally bg-base-100 rounded-box shadow-md transition-all hover:shadow-lg"
+                                                            id="button-cally-element"
+                                                            value="-">
+                                                            <span
+                                                                class="iconify lucide--chevron-left"
+                                                                slot="previous"></span>
+                                                            <span
+                                                                class="iconify lucide--chevron-right"
+                                                                slot="next"></span>
+                                                            <calendar-month></calendar-month>
+                                                        </calendar-date>
+                                                    </div>
+                                                </div>
+                                                <p class="label mt-3 text-sm">
+                                                    Priority dates (Multi)
+                                                </p>
+                                                <div class="dropdown dropdown-start w-full">
+                                                    <div
+                                                        role="button"
+                                                        class="btn btn-outline border-base-300 flex items-center gap-3"
+                                                        tabindex="0">
+                                                        <span
+                                                            class="iconify lucide--stars text-base-content/80 size-4.5 shrink-0"></span>
+                                                        <p
+                                                            class="line-clamp-1 text-start"
+                                                            id="multi-cally-target">
+                                                            -
+                                                        </p>
+                                                        <span
+                                                            class="iconify lucide--calendar-days text-base-content/70 size-4.5 shrink-0"></span>
+                                                    </div>
+                                                    <div class="dropdown-content mt-2" tabindex="0">
+                                                        <calendar-multi
+                                                            class="cally bg-base-100 rounded-box shadow-md transition-all hover:shadow-lg"
+                                                            id="multi-cally-element"
+                                                            value="-">
+                                                            <span
+                                                                class="iconify lucide--chevron-left"
+                                                                slot="previous"></span>
+                                                            <span
+                                                                class="iconify lucide--chevron-right"
+                                                                slot="next"></span>
+                                                            <calendar-month></calendar-month>
+                                                        </calendar-multi>
+                                                    </div>
+                                                </div>
+                                                <p class="label mt-3 text-sm">
+                                                    Your travel dates (Range)
+                                                </p>
+                                                <div class="dropdown dropdown-start mt-1 w-full">
+                                                    <div
+                                                        role="button"
+                                                        class="btn btn-outline border-base-300 flex items-center gap-3"
+                                                        tabindex="0">
+                                                        <span
+                                                            class="iconify lucide--plane-takeoff text-base-content/80 size-4.5"></span>
+                                                        <p
+                                                            class="text-start"
+                                                            id="range-cally-target">
+                                                            -
+                                                        </p>
+                                                        <span
+                                                            class="iconify lucide--calendar-range text-base-content/70 size-4.5"></span>
+                                                    </div>
+                                                    <div class="dropdown-content mt-2" tabindex="0">
+                                                        <calendar-range
+                                                            class="cally bg-base-100 rounded-box shadow-md transition-all hover:shadow-lg"
+                                                            id="range-cally-element"
+                                                            value="-">
+                                                            <span
+                                                                class="iconify lucide--chevron-left"
+                                                                slot="previous"></span>
+                                                            <span
+                                                                class="iconify lucide--chevron-right"
+                                                                slot="next"></span>
+                                                            <calendar-month></calendar-month>
+                                                        </calendar-range>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Inline</div>
+                                            <div class="mt-4">
+                                                <calendar-date
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-date>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Control: Icon</div>
+                                            <div class="mt-4">
+                                                <calendar-date
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1">
+                                                    <span
+                                                        class="iconify lucide--chevrons-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevrons-right"
+                                                        slot="next"></span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-date>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Control: Text</div>
+                                            <div class="mt-4">
+                                                <calendar-date
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1">
+                                                    <span slot="previous">Prev</span>
+                                                    <span slot="next">Next</span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-date>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Show outside days</div>
+                                            <div class="mt-4">
+                                                <calendar-date
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1"
+                                                    show-outside-days="true">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-date>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Different Heading</div>
+                                            <div class="mt-4">
+                                                <calendar-date
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <p
+                                                        slot="heading"
+                                                        class="text-center font-medium">
+                                                        Your Time, Your Way
+                                                    </p>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-date>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Week start: Sunday</div>
+                                            <div class="mt-4">
+                                                <calendar-date
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1"
+                                                    first-day-of-week="0">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-date>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Multi Select</div>
+                                            <div class="mt-4">
+                                                <calendar-multi
+                                                    class="cally bg-base-100 border-base-300 rounded-box w-full border pt-1">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-multi>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex flex-wrap gap-6">
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Range Select</div>
+                                            <div class="mt-4">
+                                                <calendar-range
+                                                    class="cally bg-base-100 border-base-300 rounded-box border pt-1"
+                                                    show-outside-days="true">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <calendar-month></calendar-month>
+                                                </calendar-range>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-border bg-base-100">
+                                        <div class="card-body">
+                                            <div class="card-title">Range Select: Multi Month</div>
+                                            <div class="mt-4">
+                                                <calendar-range
+                                                    class="cally bg-base-100 border-base-300 rounded-box border pt-1"
+                                                    show-outside-days="true"
+                                                    months="2">
+                                                    <span
+                                                        class="iconify lucide--chevron-left"
+                                                        slot="previous"></span>
+                                                    <span
+                                                        class="iconify lucide--chevron-right"
+                                                        slot="next"></span>
+                                                    <div class="flex gap-2 max-md:flex-wrap">
+                                                        <calendar-month></calendar-month>
+                                                        <calendar-month offset="1"></calendar-month>
+                                                    </div>
+                                                </calendar-range>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+
+                    <!--  End: Layout - Content -->
+                    <load src="partials/footer.html" />
+                </div>
+            </div>
+
+            <load src="partials/rightbar.html" />
+        </div>
+
+        <!--  End: Layout - Main -->
+        <script>
+            document.getElementById("input-cally-element")?.addEventListener("change", (e) => {
+                document.getElementById("input-cally-target").value = e.target.value
+            })
+            document.getElementById("button-cally-element")?.addEventListener("change", (e) => {
+                document.getElementById("button-cally-target").innerText = e.target.value
+            })
+            document.getElementById("multi-cally-element")?.addEventListener("change", (e) => {
+                document.getElementById("multi-cally-target").innerText = e.target.value
+            })
+            document.getElementById("range-cally-element")?.addEventListener("change", (e) => {
+                document.getElementById("range-cally-target").innerText = e.target.value
+            })
+        </script>
+
+        <script type="module" src="https://unpkg.com/cally"></script>
+
+        <load src="partials/footer-scripts.html" />
+    </body>
+</html>

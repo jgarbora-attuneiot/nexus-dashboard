@@ -1,0 +1,32 @@
+{
+    "name": "nexus-html",
+    "description": "Modern admin and client dashboards built with DaisyUI. Clean, responsive, and fully customizable.",
+    "version": "2.3.0",
+    "private": true,
+    "type": "module",
+    "homepage": "https://nexus.daisyui.com/",
+    "author": {
+        "name": "Denish Navadiya",
+        "url": "https://x.com/withden_"
+    },
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier src/ --write"
+    },
+    "engines": {
+        "node": ">=18.18.0"
+    },
+    "devDependencies": {
+        "@iconify-json/lucide": "^1.2.42",
+        "@iconify/tailwind4": "^1.0.6",
+        "@tailwindcss/vite": "4.1.6",
+        "daisyui": "^5.0.35",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "tailwindcss": "4.1.6",
+        "vite": "^6.3.5",
+        "vite-plugin-html-inject": "^1.1.2"
+    }
+}
